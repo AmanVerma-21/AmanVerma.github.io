@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Navy Academic Dark Theme */
+    --background: 0.12 0.025 265;
+    --foreground: 0.96 0.008 265;
+
+    --card: 0.15 0.025 265;
+    --card-foreground: 0.96 0.008 265;
+
+    --popover: 0.15 0.025 265;
+    --popover-foreground: 0.96 0.008 265;
+
+    /* Deep indigo primary */
+    --primary: 0.55 0.18 265;
+    --primary-foreground: 0.97 0.005 265;
+
+    /* Secondary - teal/cyan accent */
+    --secondary: 0.65 0.12 195;
+    --secondary-foreground: 0.1 0.02 265;
+
+    --muted: 0.2 0.02 265;
+    --muted-foreground: 0.65 0.04 265;
+
+    /* Teal accent */
+    --accent: 0.7 0.14 195;
+    --accent-foreground: 0.1 0.02 265;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 0;
+
+    --border: 0.25 0.03 265;
+    --input: 0.22 0.025 265;
+    --ring: 0.55 0.18 265;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.7 0.14 195;
+    --chart-2: 0.65 0.16 250;
+    --chart-3: 0.6 0.18 280;
+    --chart-4: 0.65 0.15 220;
+    --chart-5: 0.7 0.12 170;
+
+    --sidebar: 0.1 0.022 265;
+    --sidebar-foreground: 0.9 0.01 265;
+    --sidebar-primary: 0.55 0.18 265;
+    --sidebar-primary-foreground: 0.97 0.005 265;
+    --sidebar-accent: 0.18 0.025 265;
+    --sidebar-accent-foreground: 0.9 0.01 265;
+    --sidebar-border: 0.22 0.025 265;
+    --sidebar-ring: 0.55 0.18 265;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .placeholder-box {
+    @apply border-2 border-dashed rounded-lg p-4;
+    border-color: oklch(0.45 0.08 195);
+    background: oklch(0.18 0.025 195 / 0.25);
+  }
+  .placeholder-text {
+    @apply italic text-sm leading-relaxed;
+    color: oklch(0.62 0.09 195);
+  }
+  .placeholder-label {
+    @apply text-xs font-mono uppercase tracking-wider mb-2 block;
+    color: oklch(0.55 0.1 195);
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-semibold mb-2;
+    color: oklch(0.94 0.01 265);
+  }
+  .section-subtitle {
+    @apply text-base mb-10;
+    color: oklch(0.62 0.05 265);
+  }
+  .teal-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: oklch(0.7 0.14 195);
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .glow-line {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.7 0.14 195),
+      transparent
+    );
+    margin: 1rem 0 2.5rem;
+  }
+}
